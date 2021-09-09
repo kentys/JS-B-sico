@@ -141,7 +141,7 @@
 
         }
         ordemM = M.sort()
-        ordemF = M.sort()
+        ordemF = F.sort()
         //document.write(``)
         document.write(`<h1>Ônibus</h1>`)
 
@@ -184,7 +184,7 @@
                         lugares_dir = 0
                         while(lugares_dir<7){
                             if(lugares_dir<ordemM.length)
-                            document.write(`<p class="acento_esq parf">${ordemF[lugares_dir]}</p>`)
+                            document.write(`<p class="acento_esq parf">${ordemM[lugares_dir]}</p>`)
                             else
                             document.write(`<p class="acento_esq"></p>`)
                             lugares_dir = lugares_dir +1;
