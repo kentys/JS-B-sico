@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        texto = prompt("Inorme um texto>: ","amor carro bbola bexiga caminhao aranha pastel");
+        vet = texto.split(" ");
+        vet_alf = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
+        for(i=0;i<vet_alf.length;i++){
+            letra = vet_alf[i];
+            achouPalavra = false;
+            for(j=0;j<vet.length;j++){
+                    if(vet[j].charAt(0)==letra){
+                        if(achouPalavra ==false){
+                            document.write(`Palavras iniciadas pela letra ${letra}:`);
+                            achouPalavra = true;
+                            document.write("<ul>");
+                        }
+                    document.write(`<li>${vet[j]}</li>`);
+                }
+            } 
+            if(achouPalavra) document.write("</ul>");           
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

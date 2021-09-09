@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+        <script>
+        nota1 = prompt("Informe a nota do 1 bimestre da disciplina: ");
+        nota2 = prompt("Informe a nota do 2 bimestre da disciplina: ");
+        soma = parseInt(nota1)+parseInt(nota2);
+        falta = 60 - soma;
+        if(soma>= 60){
+            alert("Você foi aprovado na disciplina.");
+        }
+        else{
+            alert("Você foi reprovado na disciplina. Faltam " + falta + " pontos para sua aprovação");
+        }
+    </script>
+</body>
+</html>

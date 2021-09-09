@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        jogo = ["pedra","papel","tesoura"];
+        jogador1 = parseInt(Math.random()*3); //pedra ganha de tesoura //papel ganha de pedra //tesoura ganha de papel
+        jogador2 = parseInt(Math.random()*3);
+
+        document.write(`<img src="img/${jogo[jogador1]}.png">`);
+        document.write(`<img src="img/${jogo[jogador2]}.png">`);
+
+        if(jogo[jogador1] == "pedra" && jogo[jogador2] == "tesoura"){document.write(`<p>Jogador 1 venceu!</p>`)}
+        else if(jogo[jogador1] == "papel" && jogo[jogador2] == "pedra"){document.write(`<p>Jogador 1 venceu!</p>`)}
+        else if(jogo[jogador1] == "tesoura" && jogo[jogador2] == "papel"){document.write(`<p>Jogador 1 venceu!</p>`)}
+        else if(jogo[jogador2] == "pedra" && jogo[jogador1] == "tesoura"){document.write(`<p>Jogador 2 venceu!</p>`)}
+        else if(jogo[jogador2] == "papel" && jogo[jogador1] == "pedra"){document.write(`<p>Jogador 2 venceu!</p>`)}
+        else if(jogo[jogador2] == "tesoura" && jogo[jogador1] == "papel"){document.write(`<p>Jogador 2 venceu!</p>`)}
+        else{document.write(`<p>Empate!!!</p>`)}
+    </script>
+</body>
+</html>

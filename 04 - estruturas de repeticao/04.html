@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1{
+            text-align: center;
+            margin: 0;
+            padding: 3px;
+        }
+        .main {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            
+        }
+        .rodas_esq {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .rodas_dir {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .roda1_p {
+            margin-top: 50px;
+            width: 5px;
+            height: 60px;
+            border-top: 3px solid #4F81BC;
+            border-left: 3px solid #4F81BC;
+            border-bottom: 3px solid #4F81BC;
+            border-radius: 3px;
+            background: #a8c6e9;
+        }
+        .roda2_p {
+            margin-bottom: 50px;
+            width: 5px;
+            height: 60px;
+            border-top: 3px solid #4F81BC;
+            border-left: 3px solid #4F81BC;
+            border-bottom: 3px solid #4F81BC;
+            border-radius: 3px;
+            background: #a8c6e9;
+        }
+        .roda2,.roda4{
+            margin-top: 285px;
+        }
+        .roda3_p {
+            margin-top: 50px;
+            width: 5px;
+            height: 60px;
+            border-top: 3px solid #4F81BC;
+            border-right: 3px solid #4F81BC;
+            border-bottom: 3px solid #4F81BC;
+            border-radius: 3px;
+            background: #a8c6e9;
+        }
+        .roda4_p {
+            margin-bottom: 50px;
+            width: 5px;
+            height: 60px;
+            border-top: 3px solid #4F81BC;
+            border-right: 3px solid #4F81BC;
+            border-bottom: 3px solid #4F81BC;
+            border-radius: 3px;
+            background: #a8c6e9;
+        }
+        .motorista {
+            width: 55px;
+            height: 30px;
+            background-color: black;
+            margin-top: 40px;
+            margin-left: 35px;
+            margin-bottom: 20px;
+        }
+        .corpo {
+            border: 3px solid #4F81BC;
+            border-radius: 45px;
+            width: 250px;
+            height: 510px;
+        }
+        .lugares {
+            display:flex;
+            flex-direction: row;
+        }
+
+        .acento_esq {
+            width: 75px;
+            height: 25px;
+            border: 2px solid black;
+            padding-top: 5px;
+            margin-left: 25px;
+            margin-bottom: 0;
+            text-align: center;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .direita {
+            margin-left: 15px;
+        }
+
+        .acento_dir {
+            width: 75px;
+            height: 25px;
+            border: 2px solid black;
+            padding-top: 5px;
+            margin-right: 25px;
+            margin-bottom: 0;            
+        }
+        .parf{
+            font-size: 20px;
+            text-align: center;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        passageiros = prompt("Quantas pessoas vão no busão? ", "4")
+        M = []
+        F = []
+        for (i = 0; i < passageiros; i++) {
+
+            nome = prompt(`Digite o nome da ${i+1}° pessoa: `)
+
+            sexo = prompt(`Qual o sexo da pessoa? (F ou M)`)
+
+            if (sexo.toUpperCase() == "F") {
+                F.push(nome);
+            } else if (sexo.toUpperCase() == "M") {
+                M.push(nome)
+            }
+
+        }
+        ordemM = M.sort()
+        ordemF = M.sort()
+        //document.write(``)
+        document.write(`<h1>Ônibus</h1>`)
+
+        document.write(`<div class="main">`)
+            document.write(`<div class="roda_esq">`)
+                document.write(`<div>`)
+                document.write(`<p class="roda1_p"></p>`)
+                document.write(`</div>`)
+
+                document.write(`<div class="roda2">`)
+                document.write(`<p class="roda2_p"></p>`)
+                document.write(`</div>`)
+            document.write(`</div>`)
+
+            document.write(`<div class="corpo">`)
+                document.write(`<div>`)
+                document.write(`<p class="motorista"> </p>`)
+                document.write(`</div>`)
+
+                document.write(`<div class="lugares">`)
+
+                    document.write(`<div class="esquerda">`)
+                        // for(val  in ordemF){
+                        //     document.write(`<p class="acento_esq parf">${ordemF[val]}</p>`)
+                        // }
+                        lugares_esq = 0
+                        while(lugares_esq<7){
+                            if(lugares_esq<ordemF.length)
+                            document.write(`<p class="acento_esq parf">${ordemF[lugares_esq]}</p>`)
+                            else
+                            document.write(`<p class="acento_esq"></p>`)
+                            lugares_esq = lugares_esq +1;
+                        }
+                    document.write(`</div>`)
+
+                    document.write(`<div class="direita">`)
+                        // for(val  in ordemM){
+                        //         document.write(`<p class="acento_dir parf">${ordemM[val]}</p>`)
+                        //     }
+                        lugares_dir = 0
+                        while(lugares_dir<7){
+                            if(lugares_dir<ordemM.length)
+                            document.write(`<p class="acento_esq parf">${ordemF[lugares_dir]}</p>`)
+                            else
+                            document.write(`<p class="acento_esq"></p>`)
+                            lugares_dir = lugares_dir +1;
+                        }
+                    document.write(`</div>`)
+
+                document.write(`</div>`)
+
+            document.write(`</div>`)
+
+            document.write(`<div class="roda_dir">`)
+                document.write(`<div>`)
+                document.write(`<p class="roda3_p"></p>`)
+                document.write(`</div>`)
+
+                document.write(`<div class="roda4">`)
+                document.write(`<p class="roda4_p"></p>`)
+                document.write(`</div>`)
+            document.write(`</div>`)
+        document.write(`</div>`)
+    </script>
+</body>
+
+</html>

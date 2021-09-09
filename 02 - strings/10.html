@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+            border: 2px solid black;
+            width: 750px;
+        }
+        th {
+            border: 2px solid black;
+            width: 250px;
+        }
+        td {
+            border: 2px solid black;
+            width: 250px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        texto = Number(prompt("Digite um número!"));
+        numeros = [];
+        binario = [];
+        hexadecimal = [];
+        n = [];
+        for (i = 0; i <= texto; i++) {
+            n = [i];
+            numeros[i] = parseInt(n, 10);
+            binario[i] = (+n).toString(2);
+            hexadecimal[i] = (+n).toString(16).toUpperCase();
+        }
+        document.write(
+            `<table><tr><th>Base decimal</th><th>Base binária</th><th>Base hexadecimal</th></tr></table>`
+        );
+        for (i = 0; i < texto + 1; i++) {
+            document.write(
+                `<table><td>${numeros[i]}</td><td>${binario[i]}</td><td>${hexadecimal[i]}</td></tr></table>`
+            );
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        document.write(`<h1>Jogue truco</h1>`)
+        document.write(`<h2>Cartas sorteadas</h2>`)
+        vet = [];
+        nrop = 27;
+        while(vet.length < nrop){
+            sorteio = parseInt(Math.random()*nrop);
+            if(vet.indexOf(sorteio) === -1) {
+                vet.push(sorteio);
+            }
+        }
+        document.write(`<h1>Cartas do jogador 1: </h1>`)
+        document.write(`<div>`);
+         for(i=0;i<3;i++){
+            document.write(`<img src="img/carta${vet[parseInt(Math.random()*nrop)+1]}.png">`);
+        }
+        document.write(`</div>`)
+
+        document.write(`<h1>Cartas do jogador 2: </h1>`)
+        document.write(`<div>`);
+         for(i=0;i<3;i++){
+            document.write(`<img src="img/carta${vet[parseInt(Math.random()*nrop)]}.png">`);
+        }
+        document.write(`</div>`)
+
+        document.write(`<h1>Cartas do jogador 3: </h1>`)
+        document.write(`<div>`);
+         for(i=0;i<3;i++){
+            document.write(`<img src="img/carta${vet[parseInt(Math.random()*nrop)]}.png">`);
+        }
+        document.write(`</div>`)
+
+        document.write(`<h1>Cartas do jogador 4: </h1>`)
+        document.write(`<div>`);
+         for(i=0;i<3;i++){
+            document.write(`<img src="img/carta${vet[parseInt(Math.random()*nrop)]}.png">`);
+        }
+        document.write(`</div>`)
+    </script>
+</body>
+</html>

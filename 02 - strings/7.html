@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        text = prompt("Digite um texto qualquer: ");
+        letra = prompt("Digite uma letra: ").toUpperCase();
+        aux = text.split(" ");
+        
+        for(i=0;i<aux.length;i++){
+            palavra = aux[i];
+            palavra1 = palavra.toUpperCase();
+            if(palavra1[0]==letra){
+                document.write(palavra+" ");
+            } 
+        }
+    </script>
+</body>
+</html>
