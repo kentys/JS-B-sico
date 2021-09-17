@@ -44,8 +44,11 @@
         function vazio(){
              var valor1 = document.getElementById("valor1").value;
              var valor2 = document.getElementById("valor2").value;        
-            if(valor1== "" || valor2 == "")
-                alert("Os campos não estão preenchidos");
+            if(valor1== "" || valor2 == ""){
+                alert("Preencha os 2 campos.");
+                document.getElementById("resultado").value = ""
+            }
+                
         }
     </script>
 </head>
@@ -69,10 +72,10 @@
         </tr>
         <tr>
             <td colspan="2" class="text">
-                <input type="button" value="+" onclick="soma()">
-                <input type="button" value="-" onclick="subtracao()">
-                <input type="button" value="*" onclick="multiplicacao()">
-                <input type="button" value="/" onclick="divisao()">
+                <input type="button" value="+" onclick="vazio(); soma() ">
+                <input type="button" value="-" onclick="vazio(); subtracao() ">
+                <input type="button" value="*" onclick="vazio(); multiplicacao() ">
+                <input type="button" value="/" onclick="vazio(); divisao() ">
             </td>
         </tr>
         <tr>
