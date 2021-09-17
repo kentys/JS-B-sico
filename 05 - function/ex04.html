@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table{
+            margin: auto;
+            border: 1px solid black;
+        }
+        table tr td{
+            padding: 10px;
+        }
+        .text{
+            text-align: center;
+        }
+    </style>
+    <script>
+        function soma(){
+            valor1 = document.getElementById("valor1").value;
+            valor2 = document.getElementById("valor2").value;
+            document.getElementById("resultado").value = parseInt(valor1)+parseInt(valor2);
+        }
+        function subtracao(){
+            valor1 = document.getElementById("valor1").value;
+            valor2 = document.getElementById("valor2").value;
+            document.getElementById("resultado").value = parseInt(valor1)-parseInt(valor2);
+        }
+        function multiplicacao(){
+            valor1 = document.getElementById("valor1").value;
+            valor2 = document.getElementById("valor2").value;
+            document.getElementById("resultado").value = parseInt(valor1)*parseInt(valor2);
+        }
+        function divisao(){
+            valor1 = document.getElementById("valor1").value;
+            valor2 = document.getElementById("valor2").value;
+            if(valor2 == 0)
+                alert("Não é possível dividir por 0");
+                else
+            document.getElementById("resultado").value = parseInt(valor1)/parseInt(valor2);
+        }
+        function vazio(){
+             var valor1 = document.getElementById("valor1").value;
+             var valor2 = document.getElementById("valor2").value;        
+            if(valor1== "" || valor2 == "")
+                alert("Os campos não estão preenchidos");
+        }
+    </script>
+</head>
+<body>
+    <table>
+        <tr>
+            <td>
+                <label for="valor1">1 Valor: </label>
+            </td>
+            <td>
+                <input type="text" id="valor1">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="valor2">2 Valor: </label>
+            </td>
+            <td>
+                <input type="text" id="valor2">
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" class="text">
+                <input type="button" value="+" onclick="soma()">
+                <input type="button" value="-" onclick="subtracao()">
+                <input type="button" value="*" onclick="multiplicacao()">
+                <input type="button" value="/" onclick="divisao()">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="resultado">Resultado: </label>
+            </td>
+            <td>
+                <input type="text" id="resultado">
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

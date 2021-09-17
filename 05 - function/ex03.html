@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table{
+            margin: auto;
+            border: 1px solid black;
+        }
+        table tr td{
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        function mostrarResultado(){
+            nota1 = document.getElementById("txtValor1").value;
+            nota2 = document.getElementById("txtValor2").value;
+            media = (parseInt(nota1)+parseInt(nota2))/2;
+            if(media <60)
+                document.getElementById("mostrarResultado").value = alert(`Reprovado com nota final ${media}, faltando ${60-media} pontos para sua aprovação.`);
+                else
+                document.getElementById("mostrarResultado").value = alert(`Aprovado com nota final ${media}`);
+        }
+    </script>
+        <table>
+            <tr>
+                <td>
+                    <label for="txValor1">Nota (1 bimestre):</label>
+                </td>
+                <th>
+                    <input type="text" id="txtValor1">
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    <label for="txValor2">Nota (2 bimestre):</label>
+                </td>
+                <td>
+                    <input type="text" id="txtValor2">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="button" value="Mostrar resultado" onclick="mostrarResultado()">
+                </td>
+            </tr>
+        </table>    
+</body>
+</html>
