@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="Prova01.js"></script>
+    <title>Document</title>
+    <style>
+        fieldset{
+            width: 0px;
+            display: inline-block;
+            text-align: center;
+            margin-left: 90px;
+        }
+        label{
+            display: block;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            font-weight: bold;
+            color: rgb(240,128,128);
+        }
+        h1{
+            color: rgb(240,128,128);
+            text-align: center;
+        }
+        form{
+            width: 500px;
+            margin: auto;
+            border: 1px solid black;
+            padding: 20px;
+            background-color: rgb(54,54,54);
+        }
+        input[type = "radio"]{
+            display: block;
+
+        }
+        input[type = "text"], textarea{
+            width: 90%;
+        }
+        input[type = "submit"]{
+           margin-left: 170px;
+        }
+        select{
+            width: 150px;
+        }
+        input{
+            padding: 10px;
+            display: inline-block;
+            margin: 10px;
+            cursor: pointer;
+            border-radius: 4px;
+            align-items: center;
+        }
+        body{
+            background-image: linear-gradient(to bottom, rgb(176,224,230), purple);
+        }
+    </style>
+</head>
+<body>
+<form>
+     <!-- Falta validar o select, o radio e o erro do e-email. -->
+     
+        <h1>Ficha de Inscrição - Vaga: Estoquista</h1>
+
+        <label for="txtNome">Nome Completo:</label>
+        <input type="text" id="txtNome" name="NOME" placeholder="Name">
+
+        <label for="txtDtaNasc">Data de Nascimento:</label>
+        <input type="date" id="txtDtaNasc" name="Data de Nascimento">
+
+        <label for="txtRG">N° RG:</label>
+        <input type="text" id="txtRG" name="RG" placeholder="RG" maxlength="8">
+
+        <label for="txtCPF">N° CPF:</label>
+        <input type="text" id="txtCPF" name="CPF" placeholder="CPF" maxlength="11">
+
+        <label for="txtEmail">E-mail:</label>
+        <input type="email" id="txtEmail" name="E-mail" placeholder="name@example.com">
+
+        <label for="txtEndereco">Endereço:</label>
+        <input type="text" id="txtEndereco" name="ENDERECO" placeholder="Address">
+
+        <br><br>
+        <label for="txtFone">Telefone:</label>
+        <input type="tel" id="txtFone" name="TELEFONE" placeholder="Number">
+
+        <br><br>
+        <label for="txtCidade">Cidade:</label>
+        <input type="text" id="txtCidade" name="CIDADE" placeholder="City">
+
+        <br><br>
+        <fieldset>
+            <input type="radio" name="SEXO" id="sexoM"><label for="sexoM">Masculino</label>
+        </fieldset>
+        <fieldset>
+            <input type="radio" name="SEXO" id="sexoF"><label for="sexoF">Feminino</label>
+        </fieldset>
+        <br><br>
+        <label for="estCivil">Estado Civil</label>
+        <select id="estCivil">
+            <option value="">Selecione</option>
+            <option value="" name="Casado">Casado</option>
+            <option value="" name="Solteiro">Solteiro</option>
+            <option value="" name="Divorciado">Divorciado</option>
+            <option value="" name="Viúvo">Viúvo</option>
+        </select>
+
+        <br><br>
+        <label for="">Conte-nos sobre você: </label>
+        <br>
+        <textarea name="" id="" cols="100" rows="5" placeholder="Quem é você? Hobbies? Onde trabalhou? Quais seus pontos fortes e pontos a melhorar?"></textarea>
+
+        <br><br>
+        <input type="submit" value="Cadastrar" onclick="verificar()">
+
+        <input type="reset" value="Limpar">
+    </form>
+</body>
+</html>
