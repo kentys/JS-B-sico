@@ -33,6 +33,7 @@
         }
         input[type = "radio"]{
             display: block;
+            margin: auto;
 
         }
         input[type = "text"], textarea{
@@ -58,9 +59,7 @@
     </style>
 </head>
 <body>
-<form>
-     <!-- Falta validar o select, o radio e o erro do e-email. -->
-     
+<form>     
         <h1>Ficha de Inscrição - Vaga: Estoquista</h1>
 
         <label for="txtNome">Nome Completo:</label>
@@ -90,6 +89,7 @@
         <input type="text" id="txtCidade" name="CIDADE" placeholder="City">
 
         <br><br>
+        <label for="SEXO">Sexo: </label>
         <fieldset>
             <input type="radio" name="SEXO" id="sexoM"><label for="sexoM">Masculino</label>
         </fieldset>
@@ -109,7 +109,7 @@
         <br><br>
         <label for="">Conte-nos sobre você: </label>
         <br>
-        <textarea name="" id="" cols="100" rows="5" placeholder="Quem é você? Hobbies? Onde trabalhou? Quais seus pontos fortes e pontos a melhorar?"></textarea>
+        <textarea name="" id="textarea" cols="100" rows="5" placeholder="Quem é você? Hobbies? Onde trabalhou? Quais seus pontos fortes e pontos a melhorar?"></textarea>
 
         <br><br>
         <input type="submit" value="Cadastrar" onclick="verificar()">
