@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            padding: 0px;
+            margin: 0px;
+        }
+        .boxBoy {
+            border: 1px solid black;
+            margin: auto;
+            position: absolute;
+            width: 150px;
+            height: 172px;
+            top:50%;
+            left:50%;
+            margin-top: -86px;
+            margin-left: -75px;
+        }
+        .div-01 p{
+            text-align: center;
+        }
+    </style>
+    <script>
+        function changeBoy(){
+            document.getElementById('imgBoy').src = "img/Assustado.png";
+            document.getElementById('txtBoy').innerHTML = "O que você quer?";
+        }
+        function changeBoy1(){
+            document.getElementById('imgBoy').src = "img/Nervoso.png";
+            document.getElementById('txtBoy').innerHTML = "Não me aperte!!!";
+        }
+        function changeBoy2(){
+            nome = prompt("Qual seu nome? ");
+            document.getElementById('imgBoy').src = "img/alegre.png";
+            document.getElementById('txtBoy').innerHTML = nome + ", vamos brincar?";
+        }
+        // function changeBoy(nameImg, msg) {
+        //     document.getElementById("imgBoy").src = `img/${nameImg}.png`;//=> "img/assustado.png"
+        //     if (nameImg == "alegre") {
+        //         nome = prompt("Qual é o seu nome?");
+        //         msg = `${nome}, você quer brincar?`;   
+        //     }
+        //     document.getElementById("txtBoy").innerHTML = msg;
+        // }
+    </script>
+</head>
+<body>
+<section class="section-01">
+    <div class="boxBoy">
+        <div class="div-01">
+            <img src="../Exercício 01/img/Pensativo.png" id="imgBoy" alt="" onmouseenter="changeBoy()" onmousedown="changeBoy1()" onmouseup="changeBoy2()">
+            <p id="txtBoy">“zzzzzzzzzz!!!</p>
+        </div>
+    </div>
+</section>
+</body>
+</html>

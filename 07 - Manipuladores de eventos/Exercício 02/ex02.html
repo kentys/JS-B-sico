@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .div-01, .div-02, .div-03, .div-04{
+            margin: 5px;
+            padding: 25px;
+            border: 2px solid black;
+            align-items: center;
+        }
+        .div-01 p, .div-02 p, .div-03 p, .div-04 p{
+            text-align: center;
+        }
+        .div-01 img, .div-02 img, .div-03 img, .div-04 img{
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        p{
+            font-weight: bold;
+            font-size: 30px;
+        }
+        .p-1{
+            color: red;
+            font-size: 30px;
+            font-weight: bold;
+        }
+        span{
+            color: red;
+            font-weight: bold;
+        }
+    </style>
+    <script>
+        var counterVal = 0;
+        
+        function changeBG(){
+            document.getElementById('changeBG').style.backgroundColor = 'rgb(196,214,156)';
+        }
+        function changeBGB(){
+            document.getElementById('changeBG').style.backgroundColor = 'white';
+        }
+        function changeBG1(){
+            document.getElementById('changeBG1').style.backgroundColor = 'rgb(196,214,156)';
+        }
+        function changeBGB1(){
+            document.getElementById('changeBG1').style.backgroundColor = 'white';
+        }
+        function changeBG2(){
+            document.getElementById('changeBG2').style.backgroundColor = 'rgb(196,214,156)';
+        }
+        function changeBGB2(){
+            document.getElementById('changeBG2').style.backgroundColor = 'white';
+        }
+        function changeBG3(){
+            document.getElementById('changeBG3').style.backgroundColor = 'rgb(196,214,156)';
+        }
+        function changeBGB3(){
+            document.getElementById('changeBG3').style.backgroundColor = 'white';
+        }
+        var clicks = 0;
+        var clicks1 = 0;
+        var clicks2 = 0;
+        var clicks3 = 0;
+        function contador() {
+            clicks += 1;
+            document.getElementById("contador").innerHTML = clicks;
+        }
+        function contador1(){
+            clicks1 += 1;
+            document.getElementById("contador1").innerHTML = clicks1;
+        }
+        function contador2(){
+            clicks2 += 1;
+            document.getElementById("contador2").innerHTML = clicks2;
+        }
+        function contador3(){
+            clicks3 += 1;
+            document.getElementById("contador3").innerHTML = clicks3;
+        }
+    </script>
+</head>
+<body>
+<section class="section-01">
+    <div class="container">
+        <div class="div-01" id="changeBG" onmouseover="changeBG()" onmouseleave="changeBGB()" onclick="contador()">
+            <p class="p-1">CANDIDATO 1</p>
+            <img src="../Exercício 02/img/candidato1.jpg" alt="">
+            <p>Número de votos: <span id="contador">0</span></p>
+        </div>
+        <div class="div-02" id="changeBG1" onmouseover="changeBG1()" onmouseleave="changeBGB1()" onclick="contador1()">
+            <p class="p-1">CANDIDATO 2</p>
+            <img src="../Exercício 02/img/candidato2.jpg" alt="">
+            <p>Número de votos: <span id="contador1">0</span></p>
+        </div>
+        <div class="div-03" id="changeBG2" onmouseover="changeBG2()" onmouseleave="changeBGB2()" onclick="contador2()">
+            <p class="p-1">CANDIDATO 3</p>
+            <img src="../Exercício 02/img/candidato3.jpg" alt="">
+            <p>Número de votos: <span id="contador2">0</span></p>
+        </div>
+        <div class="div-04" id="changeBG3" onmouseover="changeBG3()" onmouseleave="changeBGB3()" onclick="contador3()">
+            <p class="p-1">CANDIDATO 4</p>
+            <img src="../Exercício 02/img/candidato4.jpg" alt="">
+            <p>Número de votos: <span id="contador3">0</span></p>
+        </div>
+    </div>
+</section>
+</body>
+</html>
