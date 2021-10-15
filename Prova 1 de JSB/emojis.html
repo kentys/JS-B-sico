@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emojis</title>
+    <style>
+        img{
+            width: 100px;
+            margin: 15px;
+        }
+    </style>
+    <script>
+        function coracao(imagem, caminho){
+            document.getElementById('troca').src = 'Imagens/amor.jpg';
+        }
+        function alegre(imagem1, caminho1){
+            document.getElementById('troca').src = 'Imagens/alegre.jpg';
+        }
+        function coco(imagem2, caminho2){
+            document.getElementById('troca').src = 'Imagens/coco.jpg';
+        }
+        function count(){
+            document.getElementById('nroCount').value++;
+        }
+    </script>
+</head>
+<body>
+    <input id="cora" type="button" value="Amor" onclick="coracao()">
+    <input type="button" value="Alegre" onclick="alegre()">
+    <input type="button" value="Coco" onclick="coco()">
+    <input type="text" id="nroCount" value="0">
+    <div class="div-01">
+        <img src="Imagens/blank.png" alt="blank" id="troca" onclick="count()">
+    </div>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joguinho</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        .boxInterna{
+            margin: 10px 0px;
+        }
+        .boxInterna input[type="button"]{
+            margin-top: 10px;
+        }
+    </style>
+    <script>
+        alert('Seja bem-vindo!');
+        function texto(){
+            txt1 = document.getElementById('txt1').value = 'Instituto Federal do Triângulo Mineiro';
+            txt2 = document.getElementById('txt2').value = 'Sistemas para Internet';
+            localStorage.setItem('texto1', txt1);
+            localStorage.setItem('texto2', txt2);
+        }
+        function validacao1(){
+            if(document.getElementById('txt1').value == "" || document.getElementById('txt2').value == ""){
+                alert('Todos os campos devem ser preenchidos!')
+            }
+            else
+                window.open('dashboard.html','self_')
+        }
+        function validacao2(){
+            if(document.getElementById('txt1').value == "" || document.getElementById('txt2').value == ""){
+                alert('Todos os campos devem ser preenchidos!')
+            }
+            else
+                window.open('emojis.html', 'self_');
+        }
+    </script>
+</head>
+<body onload="texto()">
+    <form action="">
+        <div class="boxExterna">
+            <div class="boxInterna">
+                <label for="">Texto 1: </label>
+                <input type="text" id="txt1" size="50" >
+            </div>
+            <div class="boxInterna">
+                <label for="">Texto 2: </label>
+                <input type="text" id="txt2" size="50">
+            </div>
+            <div class="boxInterna">
+                <input type="button" value="Processar texto" onclick="validacao1();">
+                <input type="button" value="Ver emojis" onclick="validacao2()">
+            </div>
+        </div>
+    </form>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <style>
+        *{
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        input[type="button"]{
+            font-size: 10px;
+            margin: 10px 10px 0px 10px;
+        }
+        ul li{
+            list-style: none;
+            font-weight: bold ;
+            margin: 10px;
+        }
+        p{
+            font-size: 10px;
+            margin-left: 10px;
+        }
+    </style>
+    <script>
+        function mostrarInfo(){
+            text1 = document.getElementById('item1').innerHTML = localStorage.getItem('texto1');
+            text2 = document.getElementById('item2').innerHTML = localStorage.getItem('texto2');
+            textConc = document.getElementById('item3').innerHTML = text1 + " " + text2;
+            primeiraPala = textConc.split(' ');
+            document.getElementById('item4').innerHTML = primeiraPala[0];
+            document.getElementById('item5').innerHTML = primeiraPala[primeiraPala.length-1];
+            document.getElementById('item6').innerHTML = text1.toLowerCase() + " " + text2.toUpperCase();
+            aux1 = text1.split(' ');
+            aux2 = text2.split(' ');
+            document.getElementById('item7').innerHTML = aux1[0] + " " + aux2[1].toUpperCase();
+            document.getElementById('item8').innerHTML = primeiraPala.length;
+        }
+    </script>
+</head>
+<body>
+    <input type="button" value="Mostrar informações" onclick="mostrarInfo()">
+    <ul>
+        <li>1) Texto 1 informado pelo usuário: </li>
+        <p><span id="item1"></span></p>
+        <li>2) Texto 2 informado pelo usuário: </li>
+        <p><span id="item2"></span></p>
+        <li>3) Texto concatenado: </li>
+        <p><span id="item3"></span></p>
+        <li>4) Primeira palavra do texto concatenado: </li>
+        <p><span id="item4"></span></p>
+        <li>5) Última palavra do texto concatenado: </li>
+        <p><span id="item5"></span></p>
+        <li>6) Texto 1 todo minúsculo concatenado com o texto 2 todo MAIÚSCULO: </li>
+        <p><span id="item6"></span></p>
+        <li>7) Primeira palavra do texto 1 concatenado com a segunda palavra maiúscula do texto 2: </li>
+        <p><span id="item7"></span></p>
+        <li>8) Total de palavras do texto concatenado: </li>
+        <p><span id="item8"></span></p>
+    </ul>
+</body>
+</html>

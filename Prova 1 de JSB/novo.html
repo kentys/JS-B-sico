@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Emojis</title>
+        <style>
+            body {
+                width: 400px;
+            }
+            .div-1 {
+                margin: 10px 0px 10px 10px;
+            }
+        </style>
+        <script>
+            function amor(nameImg) {
+                document.getElementById("amor").src = `imagens/${nameImg}.jpg`;
+            }
+            function alegre(nameImg) {
+                document.getElementById("amor").src = `imagens/${nameImg}.jpg`;
+            }
+            function coco(nameImg) {
+                document.getElementById("amor").src = `imagens/${nameImg}.jpg`;
+            }
+            function contador() {
+                document.getElementById("count").value++;
+            }
+        </script>
+    </head>
+    <body>
+        <div class="div-1">
+            <input type="button" value="amor" onclick="amor('amor')" />
+            <input type="button" value="alegre" onclick="alegre('alegre')" />
+            <input type="button" value="coco" onclick="coco('coco')" />
+            <input type="text" id="count" value="0" />
+        </div>
+        <img src="imagens/1.jpg" alt="" id="amor" onclick="contador()" />
+    </body>
+</html>
