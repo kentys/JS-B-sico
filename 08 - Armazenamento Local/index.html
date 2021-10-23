@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Helvetica;
+            border: none;
+        }
+
+        body{
+            background-image: url('../08 - Armazenamento Local/img/BG.png');
+            background-size: cover;
+        }
+        textarea:focus, input:focus{
+            outline: none;
+        }
+        .container{
+            background-color: white;
+            border: 2px solid black;
+            width: 300px;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 10px 10px;
+            margin-top: 10vh;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        form{
+            margin-top: 30px;
+            margin-bottom: 40px;
+        }
+        label, input{
+            margin: auto;
+            margin-top: 5px;
+            display: block;
+            width: 60%;
+        }
+        label{
+            font-weight: bold;
+            font-size: .8rem;
+        }
+        input[type="text"], input[type="password"]{
+            border-bottom: 2px solid black;
+            padding: 10px;
+        }
+        .mod{
+            margin: auto;
+            margin-top: 10px;
+            width: 50%;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+    <script>
+            var usuarios = [];
+            var senhas = [];
+            
+            function validacao(){
+                var campo1 = document.getElementById("txtCampo1").value;
+                var campo2 = document.getElementById("txtCampo2").value;
+
+                console.log(campo1);
+                console.log(campo2);
+
+                user = localStorage.getItem("usuarios").split(",");
+                pw = localStorage.getItem("senhas").split(",");
+
+                console.log(user);
+                console.log(pw);
+
+                for(var i=0; i<user.length;i++){
+                    if(campo1 == "" || campo2 == ""){
+                        alert("Todos os campos devem ser preenchidos!");
+                        break;
+                    }
+                    else if (user[i] != campo1 || pw[i] != campo2) {
+                            if (user[i] == campo1) {
+                                alert("Usuário existente, porém senha inválida.");
+                                break;
+                            }
+                            else {
+                                alert("Usuário inexistente. Tente outro usuário");
+                            }
+                    }
+                    else
+                        alert("Login realizado com sucesso!");
+                        window.open("tamagochi.html","_self");
+                        break;
+                }
+            }
+        function cadastro(){
+                    window.open("cadastro.html","_self");
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>Login</h1>
+        <form action="">
+            <label for="txtCampo1">E-mail de login:</label>
+            <input type="text" id="txtCampo1" placeholder="Digite@gmail.com">
+    
+            <label for="txtCampo2">Senha: </label>
+            <input type="password" id="txtCampo2" placeholder="Digite sua senha">
+    
+            <input type="button" value="Login" class="mod" onclick="validacao()">
+            
+            <input type="button" value="Cadastro" class="mod" onclick="cadastro()">
+        </form>
+    </div>
+</body>
+</html>

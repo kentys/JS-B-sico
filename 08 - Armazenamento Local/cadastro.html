@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Helvetica;
+            border: none;
+        }
+
+        body{
+            background-image: url('../08 - Armazenamento Local/img/BG.png');
+            background-size: cover;
+        }
+        textarea:focus, input:focus{
+            outline: none;
+        }
+        .container{
+            background-color: white;
+            border: 2px solid black;
+            width: 300px;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 20px 30px;
+            margin-top: 10vh;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        form{
+            margin-top: 30px;
+            margin-bottom: 40px;
+        }
+        label, input{
+            margin: auto;
+            margin-top: 5px;
+            display: block;
+            width: 60%;
+        }
+        label{
+            font-weight: bold;
+            font-size: .8rem;
+        }
+        input[type="text"], input[type="password"], input[type="email"]{
+            border-bottom: 2px solid black;
+            padding: 10px;
+        }
+        .mod{
+            margin: auto;
+            margin-top: 10px;
+            width: 50%;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+    <script>
+            usuarios = [];
+            senhas = [];
+        function validacao(){
+            campo1 = document.getElementById("txtUser").value;
+            campo2 = document.getElementById("txtSenha").value;
+
+            console.log(campo1);
+            console.log(campo2);
+
+            if((campo1 == "") || (campo2 == ""))
+                alert("Todos os campos devem ser preenchidos!");
+                else if (campo2.length < 5)
+                    alert("Senha deve conter no mínimo 5 digitos!");
+                else{
+                    if (usuarios.indexOf(campo1) > -1) {
+                            alert("Usuário já existente. Tente outro.")
+                        }
+                    else {
+                            alert("Cadastro efetuado com sucesso!");
+                            usuarios.push(campo1);
+                            senhas.push(campo2);
+                            localStorage.setItem("usuarios", usuarios);
+                            localStorage.setItem("senhas", senhas);
+                    }
+                }
+        }
+        function voltar(){
+            window.open("index.html","_self");
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>Cadastro</h1>
+        <form action="">
+            <label for="login">E-mail de login:</label>
+            <input type="email" id="txtUser" placeholder="Digite@gmail.com">
+    
+            <label for="senha" min="5">Senha: </label>
+            <input type="password" id="txtSenha" placeholder="Digite sua senha">
+
+            <input type="button" value="Cadastrar" class="mod" onclick="validacao()">
+            <input type="button" value="Voltar" class="mod" onclick="voltar()">
+        </form>
+    </div>
+</body>
+</html>

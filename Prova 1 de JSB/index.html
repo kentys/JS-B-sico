@@ -21,14 +21,14 @@
         function texto(){
             txt1 = document.getElementById('txt1').value = 'Instituto Federal do Triângulo Mineiro';
             txt2 = document.getElementById('txt2').value = 'Sistemas para Internet';
-            localStorage.setItem('texto1', txt1);
-            localStorage.setItem('texto2', txt2);
         }
         function validacao1(){
             if(document.getElementById('txt1').value == "" || document.getElementById('txt2').value == ""){
                 alert('Todos os campos devem ser preenchidos!')
             }
             else
+                localStorage.setItem('texto1', txt1);
+                localStorage.setItem('texto2', txt2);
                 window.open('dashboard.html','_self')
         }
         function validacao2(){
@@ -36,6 +36,8 @@
                 alert('Todos os campos devem ser preenchidos!')
             }
             else
+                localStorage.setItem('texto1', txt1);
+                localStorage.setItem('texto2', txt2);
                 window.open('emojis.html', '_self');
         }
     </script>

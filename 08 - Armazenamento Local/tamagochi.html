@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Helvetica;
+            border: none;
+        }
+        .boxBoy {
+            margin: auto;
+            position: absolute;
+            width: 150px;
+            height: 172px;
+            top:50%;
+            left:50%;
+            margin-top: -86px;
+            margin-left: -75px;
+        }
+        .div-01 p{
+            text-align: center;
+        }
+        .sair{
+            margin: auto;
+            text-align: center;
+            margin-top: 50px;
+            margin-top: 300px;
+            width: 200px;
+        }
+        body{
+            background-image: url('../08 - Armazenamento Local/img/BG.png');
+            background-size: cover;
+        }
+        textarea:focus, input:focus{
+            outline: none;
+        }
+        input{
+            margin: auto;
+            display: block;
+            width: 60%;
+            border-radius: 5px;
+            padding: 5px;
+        }
+        h1{
+            text-align: center;
+            margin-top: 10vh;
+            color: rgba(53, 90, 211, 0.986);
+            background-color: white;
+            width: 100%;
+        }
+        p{
+            color: rgba(53, 90, 211, 0.986);
+            background-color: white;
+        }
+    </style>
+    <script>
+        function changeBoy(){
+            document.getElementById('imgBoy').src = "../08 - Armazenamento Local/img/Assustado.png";
+            document.getElementById('txtBoy').innerHTML = "O que você quer?";
+        }
+        function changeBoy1(){
+            document.getElementById('imgBoy').src = "../08 - Armazenamento Local/img/Nervoso.png";
+            document.getElementById('txtBoy').innerHTML = "Não me aperte!!!";
+        }
+        function changeBoy2(){
+            nome = prompt("Qual seu nome? ");
+            document.getElementById('imgBoy').src = "../08 - Armazenamento Local/img/alegre.png";
+            document.getElementById('txtBoy').innerHTML = nome + ", vamos brincar?";
+        }
+        // function changeBoy(nameImg, msg) {
+        //     document.getElementById("imgBoy").src = `img/${nameImg}.png`;//=> "img/assustado.png"
+        //     if (nameImg == "alegre") {
+        //         nome = prompt("Qual é o seu nome?");
+        //         msg = `${nome}, você quer brincar?`;   
+        //     }
+        //     document.getElementById("txtBoy").innerHTML = msg;
+        // }
+        function sair(){
+            if(prompt("Deseja realmente sair?").toUpperCase() == 'SIM'){
+                window.open("index.html","_self");
+            }
+        }
+    </script>
+</head>
+<body>
+<section class="section-01">
+    <div class="">
+        <h1>Seja Bem Vindo ao jogo Tamagochi!</h1>
+    </div>
+        <div class="boxBoy">
+            <div class="div-01">
+                <img src="../08 - Armazenamento Local/img/Pensativo.png" id="imgBoy" alt="" onmouseenter="changeBoy()" onmousedown="changeBoy1()" onmouseup="changeBoy2()">
+                <p id="txtBoy">“zzzzzzzzzz!!!</p>
+            </div>
+        </div>
+        <div class="sair">
+            <form action="">
+                <input type="button" value="Sair" onclick="sair()">
+            </form>
+        </div>
+</section>
+</body>
+</html>
