@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            padding: 0px;
+            margin: 0px;
+        }
+        h1{
+            text-align: center;
+        }
+        .container {
+            margin: auto;
+            display: block;
+            top:25%;
+            left:37%;
+        }
+        .img-1{
+            width: 250px;
+            margin-left: 350px;
+        }
+        button{
+            text-align: center;
+            padding: 2px;
+            margin-left: 450px;
+        }
+    </style>
+    <script>
+        let myVar = setInterval(myTimer ,1000);
+        function stop(){
+
+        }
+        function atualiza() {
+            document.getElementById("imgFruta").src = `img/laranja-1.jpg`;
+            setTimeout(atualiza2, 5000);
+        }
+        function atualiza2(){
+            document.getElementById("imgFruta").src = `img/banana.png`;
+            setTimeout(atualiza2, 5000);
+            }
+        function atualiza3(){
+            document.getElementById("imgFruta").src = `img/maça.png`;
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>Passe o mouse sobre a imagem.</h1>
+        <div class="div-01">
+            <img src="../09 - [Atividade Avaliativa] - Temporizadores em JS/img/maça.png" id="imgFruta" alt="" class="img-1" onmouseover="setTimeout(atualiza, 3000)">
+        </div>
+        <div class="div-02">
+            <form action="">
+                <button onclick="clearInterval(atualiza);clearInterval(atualiza2);clearInterval(atualiza3)">Reset!</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
