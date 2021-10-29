@@ -10,7 +10,7 @@
             setInterval(function(){
                 card = parseInt(Math.random() * 27 + 1);
                 img =(`<img src="cartas/carta${card}.PNG">`);
-                document.getElementById("sorteada").innerHTML = img;
+                document.getElementById("sorteada").src = `cartas/carta${card}.png`;;
                 }, 2000); 
             }
     </script>
@@ -19,6 +19,6 @@
     <button onclick="executa()">Embaralhar</button>
 
     <p>Sua carta aparecerá aqui:</p>
-    <p id="sorteada"></p>
+    <img src="../09 - [Atividade Avaliativa] - Temporizadores em JS/cartas/blank.png" alt="carta" id="sorteada">
 </body>
 </html>
