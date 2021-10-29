@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade Avaliativa Resolvida</title>
+    <script>
+        function executa() {
+            setInterval(function(){
+                card = parseInt(Math.random() * 27 + 1);
+                img =(`<img src="cartas/carta${card}.PNG">`);
+                document.getElementById("sorteada").innerHTML = img;
+                }, 2000); 
+            }
+    </script>
+</head>
+<body>
+    <button onclick="executa()">Embaralhar</button>
+
+    <p>Sua carta aparecerá aqui:</p>
+    <p id="sorteada"></p>
+</body>
+</html>
