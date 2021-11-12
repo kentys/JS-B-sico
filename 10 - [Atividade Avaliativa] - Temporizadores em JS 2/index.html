@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        img{
+            width: 300px;
+        }
+        h1{
+            color: red;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        h2{
+            color: green;
+        }
+        .container{
+            display: flex;
+            justify-content: center;
+        }
+        .box1, .box2{
+            margin: 0px 20px;
+            width: 300px;
+        }
+    </style>
+    <script>
+        nroImg = 1;
+        nroInfo = 1;
+        function slideshow(){
+            id = setInterval("changeImg()",1000);
+            id2 = setInterval("changeInfo()",1000);
+        }
+        function pause(){
+            clearInterval(id);
+            clearInterval(id2);
+        }
+        function changeImg(){
+            nroImg++;
+            if(nroImg>3) nroImg = 1;
+            document.getElementById("slideshow").src = `../10 - [Atividade Avaliativa] - Temporizadores em JS 2/imagens/img${nroImg}.jpg`;
+        }
+        function changeInfo(){
+            nroInfo++;
+            if(nroInfo == 1) corola();
+            else if(nroInfo == 2) civic();
+            else if(nroInfo == 3) focus();
+            else {
+                nroInfo = 1;
+                corola();
+            }
+        }
+        function corola(){
+             document.getElementById("nome").innerHTML = "Corola";
+             document.getElementById("potencia").innerHTML = "155 cv";
+             document.getElementById("garantia").innerHTML = "3 anos";
+             document.getElementById("consumo").innerHTML = "não foi informado";
+        }
+        function civic(){
+            document.getElementById("nome").innerHTML = "Civic";
+            ocument.getElementById("potencia").innerHTML = "140cv";
+            document.getElementById("garantia").innerHTML = "3 anos";
+            document.getElementById("consumo").innerHTML = "9,2km/l";
+        }
+        function focus(){
+            document.getElementById("nome").innerHTML = "Focus";
+            document.getElementById("potencia").innerHTML = "172cv";
+            document.getElementById("garantia").innerHTML = "5 anos";
+            document.getElementById("consumo").innerHTML = "8,5km/l";
+        }
+    </script>
+</head>
+<body onload="slideshow()">
+    <h1>Lançamentos 2014 - Carros Sedãs</h1>
+    <div class="container">
+        <div class="box1">
+            <img src="../10 - [Atividade Avaliativa] - Temporizadores em JS 2/imagens/img1.jpg" alt="Corola" id="slideshow" onmouseenter="pause()" onmouseout="slideshow()">
+        </div>
+        <div class="box2">
+            <h2>Características do Carro</h2>
+            <ul>
+                <li>Nome: <span id="nome">Corola</span></li>
+                <li>Potência do motor: <span id="potencia">155 cv</span></li>
+                <li>Garantia: <span id="garantia">3 anos</span></li>
+                <li>Consumo(cidade): <span id="consumo">não foi informado</span></li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
