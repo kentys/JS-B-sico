@@ -3,18 +3,20 @@ function cadastrar() {
     raUser = document.getElementById("txtRA").value;
     nota1User = document.getElementById("txtNota1").value;
     nota2User = document.getElementById("txtNota2").value;
-    if(nomeUser == "" || raUser == "" || nota1User == "" || nota1User == ""){
-        alert("Necessário preencher os dados!");
+    if(nomeUser != "" &&  raUser != "" &&  nota1User != "" &&  nota1User != ""){
+        total = (parseFloat(nota1User) + parseFloat(nota2User));
+        if(total >= 60) {situa = "Aprovado";}
+        else {situa = "Reprovado";}
+        usr = {nome:nomeUser, ra:raUser, nota1:nota1User, nota2:nota2User, media:total, situacao:situa}; // objeto
+        tabUsuarios = JSON.parse(localStorage.getItem("tabUsuarios"));
+        if(tabUsuarios == null) tabUsuarios = {usuarios:[]};
+        tabUsuarios.usuarios.push(usr);
+        localStorage.setItem("tabUsuarios",JSON.stringify(tabUsuarios));
+        alert("Cadastro realizado com sucesso!");
     }
-    total = (parseFloat(nota1User) + parseFloat(nota2User));
-    if(total >= 60) {situa = "Aprovado";}
-    else {situa = "Reprovado";}
-    usr = {nome:nomeUser, ra:raUser, nota1:nota1User, nota2:nota2User, media:total, situacao:situa}; // objeto
-    tabUsuarios = JSON.parse(localStorage.getItem("tabUsuarios"));
-    if(tabUsuarios == null) tabUsuarios = {usuarios:[]};
-    tabUsuarios.usuarios.push(usr);
-    localStorage.setItem("tabUsuarios",JSON.stringify(tabUsuarios));
-    alert("Cadastro realizado com sucesso!");
+    else {
+        alert("Necessário preencher todos os dados!");
+    }
 }
 function listar(){
     tabUsuarios = JSON.parse(localStorage.getItem("tabUsuarios"));
