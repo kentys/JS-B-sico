@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../11 - TRABALHO INDIVIDUAL - JSON/js/function.js"></script>
+    <style>
+        *{
+            box-sizing: border-box;
+            padding: 0px;
+            margin: 0px;
+            font-weight: bold;
+        }
+        .div-1{
+            width: 300px;
+            background-color: gray;
+            text-align: left;
+            margin: auto;
+            margin-top: 10%;
+            border: 3px solid black;
+            border-radius: 15px;
+        }
+        .div-1 h1{
+            text-align: center;
+            margin: 10px;
+            color: white;
+            background-color: black;
+            border: 1px solid white;
+            border-radius: 15px;
+        }
+        form div{
+            margin: 25px;
+            display: flex;
+            flex-direction: column;
+        }
+        form input, form textarea{
+            outline: unset;
+            cursor: pointer;
+            border-bottom: 1px solid black;
+        }
+        a:link, a:visited{
+            text-decoration: none;
+            color: white;
+        }
+        a:hover{
+            color: black;
+        }
+        .a-link{
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        .div-bt{
+            text-align: center;
+        }
+        .div-bt input[type=button]{
+            padding: 5px;
+            border-radius: 5px;
+            width: 50%;
+            margin-left: 25%;
+        }
+    </style>
+</head>
+<body>
+    <div class="div-1">
+        <h1>Cadastro</h1>
+        <form action="" class="form-1">
+            <div>
+                <label for="txtNome">Nome:</label>
+                <input type="text" id="txtNome"> 
+            </div>
+            <div>
+                <label for="txtRA">R.A:</label>
+                <input type="text" id="txtRA">
+            </div>
+            <div>
+                <label for="txtNota1">Nota 1:</label>
+                <input type="text" id="txtNota1">
+            </div>
+            <div>
+                <label for="txtNota2">Nota 2:</label>
+                <input type="text" id="txtNota2">
+            </div>
+            <div class="div-bt">
+                <input type="button" value="Cadastrar" onclick="cadastrar()">
+            </div>
+        </form>
+        <div class="a-link">
+            <a href="listar.html">Ver usuário cadastrado.</a>
+        </div>
+    </div>
+</body>
+</html>
