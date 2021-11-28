@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expressões Regulares</title>
+    <script src="../12 - EXPRESSOES REGULARES/jwifi.js"></script>
+    <script>
+    function validardtanasc(){
+        valor = document.getElementById('txtNasc').value;
+        padrao = /^[0-9]{2}\/[0-9]{2}\/[0-9]{2,4}$/;
+        padrao.test(valor)?alert("O Texto é valido!"):alert("O texto não é valido!");
+    }
+    function validarcpf(){
+        valor = document.getElementById('txtCPF').value.trim();
+        padrao = /^\d{3}\.\d{3}\.\d{3}\-\d{2}$/;
+        (padrao.test(valor))?alert("CPF valido"):alert("CPF invalido");
+    }
+    function validarMatri(){
+        valor = document.getElementById('txtMatri').value;
+        padrao = /^(iftm)-[0-9]{3}\/[0-9]{3}-[0-9|a-z]{2}$/i;
+        (padrao.test(valor))?alert("Matricula valida"):alert("Matricula invalida");
+    }
+    function validarCodDisc(){
+        valor = document.getElementById('txtCodDisc').value;
+        padrao = /^(MT)-[0-9]{2}\.[0-9]{3}-(IFTM)$/i;
+        (padrao.test(valor))?alert("Codigo valido"):alert("Codigo invalido");
+    }
+    function validarCodDisc2(){
+        valor = document.getElementById('txtCodDisc2').value;
+        padrao = /^(MT)-[0-9]{2}\.[0-9]{3}-(IFTM|iftm)$/;
+        (padrao.test(valor))?alert("Codigo 2 valido"):alert("Codigo 2 invalido");
+    }
+    function validarCodDisc3(){
+        valor = document.getElementById('txtCodDisc3').value;
+        padrao = /^(MT|M\sT)-[0-9]{2}\.[0-9]{3}-(IFTM|I\sFTM|IF\sTM|IFT\sM|I\sF\sT\sM|I\sF\sTM)$/i;
+        (padrao.test(valor))?alert("Codigo 3 valido"):alert("Codigo 3 invalido");
+    }
+    function validarCodDisc4(){ //VOLTAR NESSA POIS ESTA INCOMPLETA
+    var texto = document.getElementById("txtCodDisc4").value;
+    var padrao = /^(MT|M\sT|mt|m\st)-[0-9]{2}\.[0-9]{3}-(IFTM|I\sF\sT\sM|I\sFTM|IF\sTM|IFT\sM|I\sF\sTM|iftm|i\sf\st\sm|i\sftm|if\stm|ift\sm|i\sf\stm)\s(Uberlândia\sCentro|Uberlândia)$/;
+    // iftm|i\sf\st\sm|i\sftm|if\stm|ift\sm|i\sf\stm
+    padrao.test(texto)? alert("Codigo 4 valido"): alert("Codigo 4 invalido");
+    }
+    function validarNomeCampus(){ 
+                //IFTM campus Uberlândia ou IFTM campus Uberlândia Centro
+                var texto = document.getElementById("txtNomeCampus").value;
+                var padrao = /^(IFTM)\s(campus)\s(Uberlândia|Uberlândia\sCentro)$/;
+                padrao.test(texto)? alert("Campus valido"): alert("Campus invalido");
+    }
+    function validarTel(){ 
+                var texto = document.getElementById("txtTel").value;
+                // +yy(xx)xxxxx-xxxx
+                var padrao = /^(\+[0-9]{2}\([0-9]{2})\)[0-9]{5}-[0-9]{4}$/;
+                padrao.test(texto)? alert("Telefone valido"): alert("Telefone invalido");
+    }
+    function validarTel2(){ 
+                var texto = document.getElementById("txtTel2").value;
+                // (xx)xxxxx-xxxx ou (xxx)xxxxx-xxxx
+                var padrao = /^\([0-9]{2,3}\)[0-9]{5}-[0-9]{4}$/;
+                padrao.test(texto)? alert("Telefone 2 valido"): alert("Telefone 2 invalido");
+    }
+    function validarAltura(){ 
+                // OBS: Únicos formatos permitidos: x,xz ou x.xz. Onde x e z são números e o caracter
+                // separador do número inteiro da parte fracionária poderá ser um ponto ou uma vírgula 
+                // (Ex: 1,3 ou 1.3). Insta ressaltar que “z” é um número opcional. OBS: Intervalo permitido
+                // para a altura de uma pessoa: [1.3, 2.5], ou seja, não serão permitidos números menores do 
+                // que 1.3 e maiores do que 2.5
+                var texto = document.getElementById("txtAltura").value;
+                // x,xz ou x.xz
+                var padrao = /^([1]{1}(\.|,)[3-9]{1,2})|([2]{1}(\.|,)[0-5]{1,2})$/i;
+                /^[1,2](\.|,)[3,5]*[0-9]$/;
+                padrao.test(texto)? alert("Altura valida"): alert("Altura invalida");
+    }
+    function validarFatura(){ 
+                var texto = document.getElementById("txtFatura").value;
+                // R$0,00 até R$999.999.999.999,99
+                // R$1.500,41; R$1.500,7; R$5.601.478,10; R$10.524.478.967,70
+                var padrao = /^(R\$[0-9]{1,3}\.[0-9]{1,3}(\.)[0-9]{1,3}(\.)[0-9]{1,3}(,)[0-9]{2})|(R\$[0-9]{1,3}(,)[0-9]{1,2})|(R\$[0-9]{1}(\.)[0-9]{3}(,)[0-9]{1,2})|(R\$[0-9]{1}(\.)[0-9]{3}(\.)[0-9]{3}(,)[0-9]{2})|(R\$[0-9]{1}(\.)[0-9]{3}(\.)[0-9]{3}(\.)[0-9]{3}(,)[0-9]{2})$/i;
+                padrao.test(texto)? alert("Faturamento valido"): alert("Faturamento invalido");
+    }
+    function validarHora(){ 
+                var texto = document.getElementById("txtHora").value;
+                // OBS: Único formato permitido: HH:MM:SS:CC (HH: hora, MM: minuto, SS: segundo, 
+                // CC: centésimo de segundo). Valores permitidos para cada unidade de tempo: (HH>=00 
+                // && HH<=23), (MM>=00 && MM<=59), (SS>=00 && SS<=59) e (CC>=00 && 
+                // CC<=99)
+                var padrao = /^[0-23]{2}:[0-59]{2}:[0-59]{2}:[0-99]{2}$/;
+                padrao.test(texto)? alert("Hora valida"): alert("Hora invalida");
+    }
+    function validarSenha(){ 
+        // OBS: Único formato permitido: X&W.Y.Z-U,V.T ou X&W.Y-U,V.T Onde X deverá 
+        // ser no mínimo 5 (cinco) caracteres alfanuméricos, além de um dos seguintes símbolos 
+        // (“.”, “-”,”_”), W deverá ser apenas letras maiúsculas ou minúsculas de "a" a "p" (pelo 
+        // menos 1), Y apenas vogais minúsculas (pelo menos 1), Z apenas letras maiúsculas ou 
+        // minúsculas e/ou números de 0 a 5 (opcional), U deverá ser caracteres diferentes de 
+        // números (pelo menos 1), V deverá ser 2 caracteres especiais e T qualquer caracter exceto 
+        // 'a','b','0' e '1' (pelo menos 1)
+        // Exemplo: 3b21a.&apMb.aei.Ab0-asf+_,/*.cq
+
+                var texto = document.getElementById("txtSenha").value;
+                var padrao = /^[a-z0-9]{5}(\.|-|_)&[a-zA-Z]{1,}\.[aeiou]{1,}\.([a-zA-Z]|[0-5]){0,}\-[^0-9]{1,},[^a-zA-Z0-9]{2}\.[^ab01]{1,}$/;
+                // *[a-zA-Z0-5]-^[0-9]{1,},
+                padrao.test(texto)? alert("Senha valida"): alert("Senha invalida");
+    }
+    </script>
+    <style>
+        .div-1{
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <form action="">
+            <!-- DATA DE NASCIMENTO -->
+            <div class="div-1">
+                <label for="txtNasc">Data de Nascimento:</label>
+                <input type="text" id="txtNasc" value="14/10/1992">
+                <input type="button" value="Validar" onclick="validardtanasc()">
+            </div>
+            <!-- CPF -->
+            <div class="div-1">
+                <label for="txtCPF">CPF:</label>
+                <input type="text" id="txtCPF" value="123.456.789-00" onkeypress="inserirMascara('txtCPF','999.999.999-99')">
+                <input type="button" value="Validar" onclick="validarcpf()">
+            </div>
+            <!-- Número de matrícula de um aluno:             -->
+            <div class="div-1">
+                <label for="txtMatri">Número de matrícula de um aluno:</label>
+                <input type="text" id="txtMatri" value="IFTM-123/123-a2">
+                <input type="button" value="Validar" onclick="validarMatri()">
+            </div>
+            <!-- Código de uma disciplina do IFTM (jwifi): -->
+            <div class="div-1">
+                <label for="txtCodDisc">Código de uma disciplina do IFTM 1:</label>
+                <input type="text" id="txtCodDisc" value="MT-12.123-IFTM" onkeypress="inserirMascara('txtCodDisc','99-99.999-9999')">
+                <input type="button" value="Validar" onclick="validarCodDisc()">
+            </div>
+            <!-- Código de uma disciplina do IFTM (versão 2) (jwifi):  -->
+            <div class="div-1">
+                <label for="txtCodDisc2">Código de uma disciplina do IFTM 2:</label>
+                <input type="text" id="txtCodDisc2" value="MT-12.123-iftm" onkeypress="inserirMascara('txtCodDisc2','99-99.999-9999')">
+                <input type="button" value="Validar" onclick="validarCodDisc2()">
+            </div>
+            <!-- Código de uma disciplina do IFTM (versão 3): -->
+            <div class="div-1">
+                <label for="txtCodDisc3">Código de uma disciplina do IFTM 3:</label>
+                <input type="text" id="txtCodDisc3" value="MT-12.123-I FTM">
+                <input type="button" value="Validar" onclick="validarCodDisc3()">
+            </div>
+            <!-- Código de uma disciplina do IFTM (versão 4): -->
+            <div class="div-1">
+                <label for="txtCodDisc4">Código de uma disciplina do IFTM 4:</label>
+                <input type="text" size="28" id="txtCodDisc4" value="MT-12.123-IFTM Uberlândia Centro">
+                <input type="button" value="Validar" onclick="validarCodDisc4()">
+            </div>
+            <!-- Nome de campus do IFTM -->
+            <div class="div-1">
+                <label for="txtNomeCampus">Nome de campus do IFTM:</label>
+                <input type="text" id="txtNomeCampus" size="25" value="IFTM campus Uberlândia">
+                <input type="button" value="Validar" onclick="validarNomeCampus()">
+            </div>
+            <!-- Telefone (jwifi): -->
+            <div class="div-1">
+                <label for="txtTel">Telefone:</label>
+                <input type="text" id="txtTel" value="+55(34)99999-9999" onkeypress="inserirMascara('txtTel','+yy(xx)xxxx-xxxx')">
+                <input type="button" value="Validar" onclick="validarTel()">
+            </div>
+            <!-- Telefone (versão 2): -->
+            <div class="div-1">
+                <label for="txtTel2">Telefone 2:</label>
+                <input type="text" id="txtTel2" value="(034)99999-9999">
+                <input type="button" value="Validar" onclick="validarTel2()">
+            </div>
+            <!-- Altura de uma pessoa: -->
+            <div class="div-1">
+                <label for="txtAltura">Altura:</label>
+                <input type="text" id="txtAltura" value="1.90">
+                <input type="button" value="Validar" onclick="validarAltura()">
+            </div>
+            <!-- Faturamento anual de uma empresa: -->
+            <div class="div-1">
+                <label for="txtFatura">Faturamento anual:</label>
+                <input type="text" id="txtFatura" value="R$1.500.000,000">
+                <input type="button" value="Validar" onclick="validarFatura()">
+            </div>
+            <!-- Cronômetro (jwifi) -->
+            <div class="div-1">
+                <label for="txtHora">Cronômetro:</label>
+                <input type="text" id="txtHora" value="12:55:23:01" onkeypress="inserirMascara('txtHora','HH:MM:SS:CC')">
+                <input type="button" value="Validar" onclick="validarHora()">
+            </div>
+            <!-- Senha: -->
+            <div class="div-1">
+                <label for="txtSenha">Senha:</label>
+                <input type="text" size="27" id="txtSenha" value="3b21a.&apMb.aei.Ab0-asf+_,/*.cq">
+                <input type="button" value="Validar" onclick="validarSenha()">
+            </div>
+        </form>
+    </div>
+</body>
+</html>
