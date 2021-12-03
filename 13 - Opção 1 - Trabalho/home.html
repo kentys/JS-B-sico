@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estoque - Cadastro de novos produtos</title>
+    <style>
+        .div-1{
+            margin: auto;
+            padding: 15px;
+            width: 340px;
+            background-color: rgb(213,97,100);
+            border-radius: 10px;
+            color: white;
+        }
+        .div-h1{
+            color: rgb(213,97,100);
+            text-align: center;
+            margin-bottom: -20px;
+        }
+        .div-btn{
+            margin: auto;
+            text-align: center;
+        }
+        form input[type = "button"]{
+            border-radius: 5px;
+            background-color: black;
+            color: white;
+            border: none;
+            margin-top: 10px;
+            padding: 5px;
+            height: 25px;
+            width: 100px;
+        }
+        .div-lb1, .div-lb2, .div-lb3{
+            margin: 5px;
+        }
+        .div-lb1{
+            margin-left: 40px;
+            margin-bottom: 10px;
+        }
+        .div-lb2{
+            margin-bottom: 10px;
+            margin-left: 31px;
+        }
+        .section-img{
+            text-align: right;
+            margin-right: 300px;
+        }
+        .div-p{
+            margin-right: -120px;
+            margin-top: -20px;
+        }
+        .section-2{
+            margin-top: -40px;
+        }
+    </style>
+    <script src="../13 - Opção 1 - Trabalho/script.js"></script>
+</head>
+<body>
+
+    <section class="section-img">
+        <div class="div-img">
+            <img src="../13 - Opção 1 - Trabalho/carrinhoCompras.png" alt="" srcset="">
+        </div>
+        <div class="div-p">
+            <p>Items no estoque: <span id="estoque">0</span></p>
+        </div>
+    </section>
+
+    <section class="section-2">
+        <div>
+            <div class="div-h1">
+                <h1>Cadastro de novos produtos</h1>
+            </div>
+
+            <div class="div-1">
+                <form action="">
+                    <div class="div-lb1">
+                        <label for="txtNomeProd">Nome do produto:</label>
+                        <input type="text" id="txtNomeProd" value="">
+                    </div>
+                    <div class="div-lb2">
+                        <label for="txtCodProd">Código do produto:</label>
+                        <input type="text" id="txtCodProd" value="">
+                    </div>
+                    <div class="div-lb3">
+                        <label for="txtQtd">Quantidade do produto: </label>
+                        <select id="txtQtd">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="10">10</option>
+                        </select>
+                    </div>
+                    <div class="div-btn">
+                        <input type="button" value="Cadastrar" onclick="validaCampos()">
+                        <input type="button" value="Ver estoque" onclick="abreEstoque()">
+                        <input type="button" value="Limpar" onclick="limpar()">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    </body>
+</html>
